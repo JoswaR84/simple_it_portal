@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Toppers IT Portal</title>
+    <style>
+        a{
+            color: black;
+        }
+        a:hover{
+            color: #ff9999;
+        }
+        .card-header{
+            background-color: #353942;        
+            color: white;
+        }
+        .card-header:hover{
+            cursor: pointer;
+            color: #ff9999;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <!--<img src="#" width="30" height="30" class="d-inline-block align-top">-->
+            Simple IT Portal
+        </a>
+    </nav>
+
+    <br/>
+
+    <div class="container-fluid" style="margin-bottom: 10px;">
+        <div class="row">
+
+            <div class="col-xl-3">
+                <div class="card">
+                    <div class="card-header accordion_link_header">Category 1</div>
+                    <div class="card-body accordion_links">
+                        <a href="#" target="_blank">Link Placeholder</a><br/>
+                        <a href="#" target="_blank">Link Placeholder</a><br/>
+                        <a href="#" target="_blank">Link Placeholder</a><br/>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header accordion_link_header">Category 2</div>
+                    <div class="card-body accordion_links">
+                        <a href="#" target="_blank">Link Placeholder</a><br/>
+                        <a href="#" target="_blank">Link Placeholder</a><br/>
+                        <a href="#" target="_blank">Link Placeholder</a><br/>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header accordion_link_header">Category 3</div>
+                    <div class="card-body accordion_links">
+                        <a href="#" target="_blank">Link Placeholder</a><br/>
+                        <a href="#" target="_blank">Link Placeholder</a><br/>
+                        <a href="#" target="_blank">Link Placeholder</a><br/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-9">
+                <div class="card">
+                    <div class="card-header doc_collapser_header">Document View Panel</div>
+                    <div class="card-body doc_collapser">
+                                                                                     
+
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Doc 1</a>
+                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Doc 2</a>                        
+                        </div>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                            <iframe class="doc" src="" style="width: 98%; height: 550px;"></iframe>
+                        </div>
+                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                            <iframe class="doc" src="" style="width: 98%; height: 550px;"></iframe>
+                        </div>                    
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!--row-->
+    </div><!--container-->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
+    <script>
+        $(document).ready(function(){
+            $('.accordion_links').hide();            
+
+            $('.accordion_link_header').on('click', function(){
+                $('.accordion_links').not($(this).next(".accordion_links")).hide();
+                $(this).next(".accordion_links").toggle();
+            });
+
+            $('.doc_collapser_header').on('click', function(){
+                if ($(window).width() <= 1183){
+                    $('.doc_collapser').toggle();
+                }                
+            });
+
+            if ($(window).width() <= 1183) {
+                    $('.doc_collapser').hide();
+            } else {
+                    $('.doc_collapser').show();
+            }
+
+            $(window).on('resize', function() {
+                if ($(this).width() <= 1183) {
+                    $('.doc_collapser').hide();
+                } else {
+                    $('.doc_collapser').show();
+                }
+            });
+        });        
+    </script>
+                   
+</body>
+</html>
